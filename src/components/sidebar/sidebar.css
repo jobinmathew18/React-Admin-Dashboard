@@ -35,8 +35,13 @@
     margin-block: 2px;
 }
 
-.sidebarListItem.active, .sidebarListItem:hover{
+.sidebarListItem:hover{
     background-color: rgb(224, 226, 233);
+}
+
+a.active{
+    color: darkblue;
+    font-weight: 900;
 }
 
 .sidebarIcon{

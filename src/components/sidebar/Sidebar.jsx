@@ -12,7 +12,9 @@ import {
   WorkOutline,
   Report,
 } from "@mui/icons-material";
+import { NavLink } from "react-router-dom";
 import "./sidebar.css";
+
 
 const Sidebar = () => {
   return (
@@ -21,10 +23,13 @@ const Sidebar = () => {
         <div className="sidebarMenu">
           <h3 className="sidebarTitle">Dashboard</h3>
           <ul className="sidebarList">
-            <li className="sidebarListItem active">
-              <LineStyle className="sidebarIcon" />
-              Home
-            </li>
+            {/*it is the property of <NavLink> to automatically creates <a> tag and then add "active" class to that <a> tag */}
+            <NavLink to="/" className="link">     
+              <li className="sidebarListItem">
+                <LineStyle className="sidebarIcon" />
+                Home
+              </li>
+            </NavLink> 
             <li className="sidebarListItem">
               <Timeline className="sidebarIcon" />
               Analytics
@@ -38,14 +43,18 @@ const Sidebar = () => {
         <div className="sidebarMenu">
           <h3 className="sidebarTitle">Quick Menu</h3>
           <ul className="sidebarList">
-            <li className="sidebarListItem">
-              <PermIdentity className="sidebarIcon" />
-              Users
-            </li>
-            <li className="sidebarListItem">
-              <Storefront className="sidebarIcon" />
-              Products
-            </li>
+            <NavLink to="/users" className="link" >
+              <li className="sidebarListItem">
+                <PermIdentity className="sidebarIcon" />
+                Users
+              </li>
+            </NavLink>
+            <NavLink to="/products" className="link">
+              <li className="sidebarListItem">
+                <Storefront className="sidebarIcon" />
+                Products
+              </li>
+            </NavLink>
             <li className="sidebarListItem">
               <AttachMoney className="sidebarIcon" />
               Transactions
